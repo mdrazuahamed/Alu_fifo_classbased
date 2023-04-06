@@ -68,7 +68,7 @@ package adder_verif_pkg;
                     seq_item_t item_A;
                     seq_item_t item_B;
                     seq_item_t item_O;
-                    dvr_mbx.get(item);
+                    dvr_mbx.get(item);//sequencer put this item that's on tb_top
                     item_A = new item;
                     item_B = new item;
                     item_O = new item;
