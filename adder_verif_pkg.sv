@@ -47,7 +47,7 @@ package adder_verif_pkg;
 
         virtual top_adder_fifo_intf #(.DATA_IN_WIDTH(DATA_IN_WIDTH)) intf;
 
-        int d_min = 1;
+        int d_min = 1;// For delay
         int d_max = 4;
 
         mailbox #(seq_item_t) dvr_mbx;
@@ -80,7 +80,7 @@ package adder_verif_pkg;
                 forever begin
                     seq_item_t item;
                     dvr_in_A.get(item);
-                    repeat ($urandom_range(d_min, d_max)) @ (posedge intf.clk_i);
+                    repeat ($urandom_range(d_min, d_max)) @ (posedge intf.clk_i);//d for delay
                     intf.fifo_1_in       <= item.inA;
                     intf.fifo_1_in_valid <= '1;
                     do @ (posedge intf.clk_i);
