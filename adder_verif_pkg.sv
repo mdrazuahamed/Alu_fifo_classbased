@@ -65,9 +65,9 @@ package adder_verif_pkg;
 
                 forever begin
                     seq_item_t item;
-                    seq_item_t item_A;
-                    seq_item_t item_B;
-                    seq_item_t item_O;
+                    seq_item_t item_A;//for fifo_in_1
+                    seq_item_t item_B;//for fifo_in_2
+                    seq_item_t item_O;// for fifo_3_out_ready
                     dvr_mbx.get(item);//sequencer put this item that's on tb_top
                     item_A = new item;
                     item_B = new item;
